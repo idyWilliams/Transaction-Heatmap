@@ -1,13 +1,14 @@
 
 
-const Week = ({week}: {week:string}) => {
+const Week = ({day, index,}: {day:string[], index:number}) => {
   return (
     <>
       
-        <div className=" flex flex-col text-xs m-0.5 text-center align-middle">{week}</div>
+       <p className="absolute text-sm left-20 align-middle text-[#555353]">{day[index]}</p>
      
     </>
   );
 };
 
 export default Week;
+// border border-transparent h-4 w-4 rounded-sm  bg-[#D8D8D8]"><p className="  right-0
