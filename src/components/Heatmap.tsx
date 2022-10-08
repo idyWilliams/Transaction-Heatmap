@@ -29,13 +29,13 @@ const days = ["Mon", "Tue", "Wed", "Thurs", "Fri", "Sat", "Sun"];
 const groupedTx = transactionsByDate(transactions);
 const firstDay = dayjs(`${year}-01-01`).day();
 const monthsData: { [key: string]: ITransactionSummary[] } = {};
-// const months = Array.from(new Array(Math.floor(365 / 7)));
+
 
 for (let monthNo in months) {
   const month = months[monthNo];
   if (!monthsData[month]) monthsData[month] = [];
 
-  // populate transactions for each day in each month
+
   const daysInMonth = dayjs(new Date(year, Number(monthNo), 1)).daysInMonth();
   for (let dayNo = 1; dayNo <= daysInMonth; dayNo++) {
     const date = new Date(year, Number(monthNo), dayNo);
@@ -48,6 +48,8 @@ for (let monthNo in months) {
     });
   }
 }
+
+
 
 const Heatmap = () => {
   let traversed = 0;
@@ -73,9 +75,7 @@ const Heatmap = () => {
                     txn.netTransactions
                   )}`}
                   key={index}
-                  data-tip={`${txn.date}<br/>Net: ${
-                    txn.netTransactions ?? "No data"
-                  }`}
+                 
                 >
                   {month === "Jan" && index + firstDay < 7 && (
                     <p className="absolute text-sm left-20  text-[#555353]  font-light ">
