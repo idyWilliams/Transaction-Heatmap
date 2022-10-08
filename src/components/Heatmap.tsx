@@ -22,7 +22,7 @@ const months: string[] = [
   "Oct",
   "Nov",
   "Dec",
-];
+];  
 const year = 2019;
 
 const days = ["Mon", "Tue", "Wed", "Thurs", "Fri", "Sat", "Sun"];
